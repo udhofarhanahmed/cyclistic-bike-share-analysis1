@@ -1,0 +1,30 @@
+Git Ignore for R Projects
+This file is crucial for not uploading large or sensitive files to GitHub.
+R-specific files
+.Rhistory
+.RData
+.Rproj.user/
+
+renv specific files
+/renv/
+/renv.lock
+/renv.lock.yaml
+
+Data files
+We ignore the raw data as it can be very large.
+data/
+
+Output files
+We ignore the intermediate and final output files that can be regenerated from the scripts.
+output/all_trips_raw.rds
+output/trips_cleaned.rds
+output/reports/
+output/tables/
+output/figures/
+
+Local cache files
+*.log
+*.sqlite
+# Positron/RStudio temp files
+.positron/
+.Rproj.user/

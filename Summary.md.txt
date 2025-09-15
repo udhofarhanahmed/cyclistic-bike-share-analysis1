@@ -1,0 +1,16 @@
+Project Summary: Cyclistic Bike-share Analysis
+This project provides a data-driven comparison of casual riders and annual members of Cyclistic's bike-share program.
+
+Key Findings
+Casual vs. Member Behavior: Casual riders typically take significantly longer trips, primarily on weekends, suggesting a recreational usage pattern. In contrast, members' shorter, more frequent rides on weekdays point to a commuter-focused use.
+
+Peak Usage: The busiest days for casual riders are Saturdays and Sundays, while members' usage peaks on Tuesdays and Wednesdays. This aligns with the distinct weekend vs. weekday use cases.
+
+Actionable Insight: The average ride length for casual riders is substantially longer than for members, highlighting a key difference in how they utilize the service.
+
+Recommended Actions
+Weekend Promotions: Launch targeted marketing campaigns and weekend-specific passes to convert high-value casual riders into members.
+
+Highlight Commuter Benefits: Emphasize the convenience and cost savings of a membership for daily commuters, targeting the most common use case for existing members.
+
+Optimize Marketing Timing: Focus advertising and outreach efforts during the peak summer months to capture the largest audience of potential new users.

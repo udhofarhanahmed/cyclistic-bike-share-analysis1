@@ -1,0 +1,32 @@
+title: "Cyclistic Bike-share: Exploratory Analysis" author: "Farhan Ahmed" date: "r Sys.Date()" output: html_document: toc: true toc_depth: 2 theme: flatly number_sections: true params: data_path: "../output/trips_cleaned.rds"
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(tidyverse); library(here); library(gt); library(lubridate); library(plotly)
+data_all <- readRDS(here::here(params$data_path))
+data <- data_all$valid
+
+Executive Summary
+Short summary of findings (fill in after running).
+Key metrics: total rides, average ride length, difference between members & casuals, busiest weekday/hour.
+
+Data ingestion & cleaning
+Explain steps: detection of start/end columns, conversion to datetime, removal of negative/zero rides, NA handling.
+
+Exploratory analysis
+Rides by user type
+user_col <- intersect(c("member_casual","user_type","usertype","member_type"), names(data))[1]
+by_type <- data %>% group_by(.data[[user_col]]) %>%
+  summarise(total_rides = n(), avg_duration = mean(ride_length_min)) %>% arrange(desc(total_rides))
+knitr::kable(by_type)
+
+Visuals
+rides_day <- data %>% group_by(.data[[user_col]], day_of_week) %>% summarise(number_of_rides = n(), avg_ride_length = mean(ride_length_min))
+ggplot(rides_day, aes(x = day_of_week, y = number_of_rides, fill = .data[[user_col]])) + 
+  geom_col(position="dodge") + 
+  labs(title = "Number of Rides by Day of Week & Rider Type", x = "Day", y = "Number of Rides", fill = "User Type") +
+  theme_minimal()
+
+Conclusions & Recommendations
+Provide 3–4 actionable recommendations for Cyclistic marketing/product team (e.g., target casual riders on weekends with promotions; encourage membership conversions, etc.)
+
+Appendix
+Data dictionary, mention files, sample of raw rows.
